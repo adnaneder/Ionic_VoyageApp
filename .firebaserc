@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mini-projet-8f38e": {
+      "hosting": {
+        "app": [
+          "mini-projet-8f38e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mini-projet-8f38e"
+  }
+}

@@ -1,0 +1,37 @@
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-button color="black" href="/home"><ion-icon name="arrow-back"></ion-icon></ion-button>
+
+      <ion-title size="medium">Voyage</ion-title>
+      <ion-button color="black" href="/reservation"><ion-icon name="albums-outline"></ion-icon></ion-button>
+
+    </ion-toolbar>
+
+  </ion-header>
+    <ion-card>
+      <img src="assets/images/{{ img }}" />
+      <ion-card-header>
+        <ion-card-subtitle>Destination</ion-card-subtitle>
+        <ion-row>
+        <ion-card-title>{{ city }}</ion-card-title>
+        <!-- <ion-button size="small">Like</ion-button> -->
+      </ion-row>
+      </ion-card-header>
+      <ion-card-content>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel quia omnis aperiam, dolorum adipisci 
+            ducimus architecto tempore voluptatibus nam, quod suscipit aspernatur quos aut non reiciendis iure ipsam enim est.  
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel quia omnis aperiam, dolorum adipisci 
+            ducimus .
+              
+              <ion-button expand="full" color="secondary" routerLink="/reserver/{{city}}">Reserver</ion-button>
+              
+      </ion-card-content>
+      
+    </ion-card>
+  <div id="container">
+    
+  </div>
+</ion-content>

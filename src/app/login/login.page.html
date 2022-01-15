@@ -1,0 +1,30 @@
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="medium">Login</ion-title>
+
+    </ion-toolbar>
+
+  </ion-header>
+
+  <ion-card>
+    <form>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked"> Email</ion-label>
+          <ion-input required type="email" [(ngModel)]="email" name="email" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked"> Password</ion-label>
+          <ion-input required type="password" [(ngModel)]="password" name="password" ></ion-input>
+        </ion-item>
+
+        <ion-button type="submit" expand="block" shape="round" (click)="login()">Login</ion-button>
+
+
+      </ion-list>
+    </form>
+  </ion-card>
+</ion-content>

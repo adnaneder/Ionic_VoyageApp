@@ -1,0 +1,73 @@
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-button color="black" href="/city"><ion-icon name="arrow-back"></ion-icon></ion-button>
+
+      <ion-title size="medium">Reservation</ion-title>
+      <ion-button color="black" href="/reservation"><ion-icon name="albums-outline"></ion-icon></ion-button>
+
+    </ion-toolbar>
+
+  </ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card *ngFor="let item of reservationList" color="primary">
+    <span *ngIf="!item.isEdit; else elseBlock">
+      <ion-card-header>
+        <ion-card-title>city : {{item.city}}</ion-card-title>
+        <ion-card-subtitle>Date : {{item.date}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button shape="round" color="secondary" size="small" (click)="EditRecord(item)">
+          <ion-icon size="small" slot="icon-only" name="create"></ion-icon>
+
+        </ion-button>
+        <ion-button shape="round" color="danger" size="small" (click)="RemoveRecord(item.$key)" >
+          <ion-icon size="small" slot="icon-only" name="trash" ></ion-icon>
+
+        </ion-button>
+      </ion-card-content>
+    </span>
+ 
+  <!-- edit -->
+
+  <ng-template #elseBlock>
+    <ion-card-header>
+      <ion-card-title>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              Edit
+            </ion-col>
+            <ion-col>
+              <ion-button fill="solid" color="medium" size="small" (click)="item.isEdit = false">
+                Cancel
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button fill="solid" color="success" size="small" (click)="UpdateRecord(item)">
+                Update
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+     
+      <ion-item>
+        <ion-label><strong>Date :</strong></ion-label>
+        <ion-input type="text" [(ngModel)]="item.EditDate"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ng-template>
+
+
+
+</ion-card>
+
+
+</ion-content>

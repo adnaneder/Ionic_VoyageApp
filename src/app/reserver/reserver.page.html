@@ -1,0 +1,36 @@
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-button color="black" href="/city"><ion-icon name="arrow-back"></ion-icon></ion-button>
+
+      <ion-title size="medium">Reserver</ion-title>
+      <ion-button color="black" href="/reservation"><ion-icon name="albums-outline"></ion-icon></ion-button>
+
+    </ion-toolbar>
+
+  </ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="reservationForm" (ngSubmit)="CreateRecord()">
+
+    <ion-item>
+      <ion-label position="floating">City</ion-label>
+      <ion-input formControlName="city" [(ngModel)]="city1" disabled type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Date</ion-label>
+      <ion-input formControlName="date" type="date"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-button (click)="CreateRecord()" [disabled]="reservationForm.invalid" routerLink="/reservation">
+        <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
+        &nbsp;Reserver
+      </ion-button>
+    </ion-item>
+
+  </form>
+</ion-content>
