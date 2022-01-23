@@ -5,25 +5,25 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   providedIn: 'root'
 })
 export class CityService {
-  collectionName = 'city';
+  collection = 'city';
    
 
   constructor( private firestore: AngularFirestore) { 
 
    }
    create_reservation(record) {
-    return this.firestore.collection(this.collectionName).add(record);
+    return this.firestore.collection(this.collection).add(record);
   }
   read_reservation() {
-    return this.firestore.collection(this.collectionName).snapshotChanges();
+    return this.firestore.collection(this.collection).snapshotChanges();
   }
 
   delete_reservation(record_id) {
-    this.firestore.doc(this.collectionName + '/' + record_id).delete();
+    this.firestore.doc(this.collection + '/' + record_id).delete();
   }
 
  
   update_reservation(recordID, record) {
-    this.firestore.doc(this.collectionName + '/' + recordID).update(record);
+    this.firestore.doc(this.collection + '/' + recordID).update(record);
   }
 }

@@ -14,14 +14,16 @@
 
 <ion-content [fullscreen]="true">
 
-  <ion-card *ngFor="let item of reservationList" color="primary">
+  <ion-card *ngFor="let item of reservationList" color="dark">
     <span *ngIf="!item.isEdit; else elseBlock">
       <ion-card-header>
-        <ion-card-title>city : {{item.city}}</ion-card-title>
+        <ion-card-title>Reservation de  : {{item.nom}} {{item.prenom}}</ion-card-title>
+        <ion-card-title>Ville : {{item.city}}</ion-card-title>
+        <ion-card-title>Email : {{item.city}}</ion-card-title>
         <ion-card-subtitle>Date : {{item.date}}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
-        <ion-button shape="round" color="secondary" size="small" (click)="EditRecord(item)">
+        <ion-button shape="round" color="success" size="small" (click)="EditRecord(item)">
           <ion-icon size="small" slot="icon-only" name="create"></ion-icon>
 
         </ion-button>
@@ -32,7 +34,7 @@
       </ion-card-content>
     </span>
  
-  <!-- edit -->
+  <!-- modifier -->
 
   <ng-template #elseBlock>
     <ion-card-header>
@@ -61,6 +63,18 @@
       <ion-item>
         <ion-label><strong>Date :</strong></ion-label>
         <ion-input type="text" [(ngModel)]="item.EditDate"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label><strong>Date :</strong></ion-label>
+        <ion-input type="text" [(ngModel)]="item.EditNom"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label><strong>Date :</strong></ion-label>
+        <ion-input type="text" [(ngModel)]="item.EditPrenom"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label><strong>Date :</strong></ion-label>
+        <ion-input type="text" [(ngModel)]="item.EditEmail"></ion-input>
       </ion-item>
     </ion-card-content>
   </ng-template>

@@ -26,6 +26,9 @@ export class ReservationPage implements OnInit {
           isEdit: false,
           city: e.payload.doc.data()['city'],
           date: e.payload.doc.data()['date'],
+          nom: e.payload.doc.data()['nom'],
+          prenom: e.payload.doc.data()['prenom'],
+          email: e.payload.doc.data()['email'],
         };
       })
       console.log(this.reservationList);
@@ -39,10 +42,16 @@ export class ReservationPage implements OnInit {
   EditRecord(record) {
     record.isEdit = true;
     record.EditDate = record.date;
+    record.EditPrenom = record.prenom;
+    record.EditNom = record.nom;
+    record.EditEmail = record.email;
   }
   UpdateRecord(recordRow) {
     let record = {};
     record['date'] = recordRow.EditDate;
+    record['prenom'] = recordRow.EditPrenom;
+    record['nom'] = recordRow.EditNom;
+    record['email'] = recordRow.EditEmail;
     this.reservation.update_reservation(recordRow.$key, record);
     recordRow.isEdit = false;
   }

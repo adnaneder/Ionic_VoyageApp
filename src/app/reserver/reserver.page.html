@@ -15,13 +15,28 @@
   <form [formGroup]="reservationForm" (ngSubmit)="CreateRecord()">
 
     <ion-item>
-      <ion-label position="floating">City</ion-label>
+      <ion-label position="floating">Ville</ion-label>
       <ion-input formControlName="city" [(ngModel)]="city1" disabled type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Date</ion-label>
       <ion-input formControlName="date" type="date"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input formControlName="nom" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Prenom</ion-label>
+      <ion-input formControlName="prenom" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
     </ion-item>
 
 

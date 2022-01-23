@@ -24,6 +24,9 @@ export class ReserverPage implements OnInit {
     this.reservationForm = this.fb.group({
       city: ['', [Validators.required]],
       date: ['', [Validators.required]],
+      nom: ['', [Validators.required]],
+      prenom: ['', [Validators.required]],
+      email: ['', [Validators.required]],
     })
   }
   CreateRecord() {
